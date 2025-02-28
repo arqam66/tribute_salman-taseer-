@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلمان تاثیر سچائی کی آواز</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 2;
+            color: #333;
+            background-color: #f8f5f0;
+            text-align: right;
+            font-size: 18px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #006A4E 0%, #004d38 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1200/300');
+            background-size: cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .hero-date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 10px;
+            display: inline-block;
+            font-weight: 400;
+        }
+        
+        .quote-section {
+            background-color: #fff;
+            border-right: 5px solid #006A4E;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            position: relative;
+        }
+        
+        .quote-section::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 5rem;
+            color: rgba(0, 106, 78, 0.1);
+            line-height: 1;
+        }
+        
+        .quote-text {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+        
+        .quote-author {
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .image-section {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 5px solid white;
+        }
+        
+        .image-caption {
+            margin-top: 15px;
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .timeline {
+            margin: 60px 0;
+            position: relative;
+            padding-right: 10px;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            right: 20px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #006A4E;
+        }
+        
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-right: 50px;
+            padding-left: 10px;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            right: 13px;
+            top: 5px;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 3px solid #006A4E;
+            z-index: 1;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #006A4E;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content p {
+            line-height: 1.8;
+        }
+        
+        .legacy-section {
+            background: linear-gradient(to bottom, #f9f9f9, #fff);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #006A4E;
+        }
+        
+        .legacy-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .section-title {
+            margin-bottom: 25px;
+            color: #006A4E;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #006A4E;
+        }
+        
+        .timeline .section-title {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+  padding: 10px 20px; /* Top-Bottom 10px, Left-Right 20px */
+}
+
+        
+        .tribute-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .tribute-card-header {
+            background-color: #006A4E;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .tribute-card-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .tribute-card-body {
+            padding: 20px;
+        }
+        
+        .tribute-card-body p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            color: white;
+            margin-top: 50px;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            font-size: 1.2rem;
+        }
+        
+        .highlight-text {
+            color: #006A4E;
+            font-weight: bold;
+        }
+        
+        /* Enhanced Responsive Styles */
+        @media (max-width: 992px) {
+            body {
+                font-size: 17px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .hero-title {
+                font-size: 2.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .quote-text {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-item {
+                padding-right: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-date {
+                font-size: 1rem;
+            }
+            
+            .quote-text {
+                font-size: 1.2rem;
+            }
+            
+            .quote-section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                padding-bottom: 10px;
+            }
+            
+            .section-title::after {
+                width: 60px;
+            }
+            
+            .timeline::before {
+                right: 16px;
+            }
+            
+            .timeline-item {
+                padding-right: 35px;
+                padding-left: 5px;
+            }
+            
+            .timeline-date {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content {
+                padding: 12px;
+            }
+            
+            .tribute-card-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .legacy-section {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px;
+            }
+            
+            header {
+                padding: 25px 10px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            .hero-date {
+                font-size: 0.9rem;
+            }
+            
+            .quote-text {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            .quote-section {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            
+            .quote-section::before {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+            
+            .section-title::after {
+                width: 50px;
+                height: 2px;
+            }
+            
+            .timeline::before {
+                right: 14px;
+                width: 2px;
+            }
+            
+            .timeline-item {
+                padding-right: 30px;
+                margin-bottom: 25px;
+            }
+            
+            .timeline-item:before {
+                width: 12px;
+                height: 12px;
+                right: 9px;
+            }
+            
+            .timeline-date {
+                font-size: 1rem;
+            }
+            
+            .timeline-content {
+                padding: 10px;
+            }
+            
+            .tribute-card-header {
+                padding: 10px 15px;
+            }
+            
+            .tribute-card-header h3 {
+                font-size: 1.2rem;
+            }
+            
+            .tribute-card-body {
+                padding: 15px;
+            }
+            
+            .legacy-section {
+                padding: 15px;
+                margin: 30px 0;
+            }
+            
+            .image-section {
+                margin: 25px 0;
+            }
+            
+            .image-caption {
+                font-size: 0.9rem;
+            }
+            
+            .footer-quote {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="hero-title">سلمان تاثیر</h1>
+            <p class="hero-subtitle">حق کی آواز، ظلم کا مقابلہ، پاکستان کا روشن ستارہ</p>
+            <p class="hero-date">۳۱ مئی ۱۹۴۴ - ۴ جنوری ۲۰۱۱</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="quote-section">
+            <p class="quote-text">میں پر بہت دباؤ ڈالا گیا کہ میں انتہا پسندوں کے سامنے جھک جاؤں۔ لیکن میں نہیں جھکا۔ میں نے کہا کہ میں ایک عیسائی خاتون کو سزائے موت کے خلاف ہر فورم پر دفاع کروں گا۔</p>
+            <p class="quote-author">— سلمان تاثیر</p>
+        </div>
+        
+        <div class="image-section">
+            <img src="/wmremove-transformed.jpeg" alt="سلمان تاثیر کی تصویر" class="hero-image">
+            <p class="image-caption">سلمان تاثیر: آزادی فکر کے محافظ، حق گوئی کے علمبردار</p>
+        </div>
+        
+        <section>
+            <h2 class="section-title">حق گو، بے باک شخصیت</h2>
+            <div class="tribute-card">
+                <div class="tribute-card-header">
+                    <h3>سلمان تاثیر: ایک جرات مند آواز</h3>
+                </div>
+                <div class="tribute-card-body">
+                    <p>سلمان تاثیر ۳۱ مئی ۱۹۴۴ کو پیدا ہوئے اور ۴ جنوری ۲۰۱۱ تک مظلوموں کی آواز بنے رہے۔ انہوں نے اپنی زندگی مذہبی انتہا پسندی کے خلاف جدوجہد میں گزاری۔ وہ ۲۰۰۸ سے ۲۰۱۱ تک پنجاب کے گورنر رہے جہاں انہوں نے توہین مذہب قوانین کے ناجائز استعمال کے خلاف آواز اٹھائی۔</p>
+                    <p>ان کی سب سے بڑی پہچان آسیہ بی بی کا دفاع تھا، جو ایک عیسائی خاتون تھیں جنہیں توہین مذہب کے قانون کے تحت سزائے موت سنائی گئی تھی۔ تاثیر نے حق کی آواز بلند کی اور قانون میں اصلاحات کی ضرورت پر زور دیا، جس کی وجہ سے وہ انتہا پسندوں کا نشانہ بن گئے۔</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="timeline">
+            <h2 class="section-title">ایک عظیم زندگی کا سفر</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۳۱ مئی ۱۹۴۴</p>
+                    <p>سملہ، برطانوی ہند میں ڈاکٹر محمد دین تاثیر اور کرسٹابل جارج کے گھر پیدا ہوئے۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۱۹۶۰ کی دہائی</p>
+                    <p>سینٹ اینتھونی اسکول لاہور میں تعلیم حاصل کی اور گورنمنٹ کالج یونیورسٹی سے گریجویشن کی۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۱۹۷۰ کی دہائی</p>
+                    <p>کاروباری دنیا میں قدم رکھا، فرسٹ کیپیٹل سیکیورٹیز کارپوریشن اور ورلڈ کال گروپ کی بنیاد رکھی۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۱۹۸۸</p>
+                    <p>سیاست میں آمد، پاکستان پیپلز پارٹی (پی پی پی) کے رکن بنے۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۱۹۹۰ کی دہائی</p>
+                    <p>پنجاب میں صوبائی وزیر اور بعد میں وفاقی وزیر کے عہدے پر فائز رہے۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۲۰۰۸</p>
+                    <p>صدر آصف علی زرداری کی جانب سے پنجاب کے گورنر مقرر کیے گئے۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۲۰۱۰</p>
+                    <p>آسیہ بی بی، جنہیں توہین مذہب کے قانون کے تحت سزائے موت سنائی گئی تھی، کا علانیہ دفاع کیا اور ان قوانین میں اصلاحات کا مطالبہ کیا۔</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">۴ جنوری ۲۰۱۱</p>
+                    <p>اسلام آباد میں اپنے ہی محافظ ممتاز قادری کے ہاتھوں قتل کر دیے گئے، جو ان کے توہین مذہب قانون پر موقف سے اختلاف رکھتا تھا۔</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="legacy-section">
+            <h2 class="section-title">جرات کی میراث</h2>
+            <p>سلمان تاثیر کی میراث انتہا پسندی کے خلاف بے باکی کی علامت کے طور پر زندہ ہے۔ انہوں نے خطرات جانتے ہوئے بھی حق کے لیے مضبوطی سے کھڑے رہنے کا عزم کیا۔ ان کے قتل نے پاکستان اور دنیا کو حیران کر دیا، جس سے ان خطرات کا پتہ چلا جن کا سامنا مذہبی انتہا پسندی اور عدم برداشت کے خلاف آواز اٹھانے والوں کو کرنا پڑتا ہے۔</p>
+            
+            <p>تاثیر کا پاکستان کے توہین مذہب قوانین کے خلاف موقف اور مذہبی اقلیتوں کا دفاع انسانی حقوق اور مذہبی آزادی کے لیے ان کے عزم کو ظاہر کرتا ہے۔ وہ ایسے پاکستان کی خواہش رکھتے تھے جہاں تمام شہری، چاہے وہ کسی بھی مذہب سے تعلق رکھتے ہوں، قانون کے تحت برابر سمجھے جائیں۔</p>
+            
+            <p>آج تاثیر کو مذہبی رواداری اور آزادی اظہار کے شہید کے طور پر یاد کیا جاتا ہے۔ ان کی بہادری آج بھی ان لوگوں کو متاثر کرتی ہے جو مذہبی انتہا پسندی کے خلاف اور ایک زیادہ جامع اور متحمل معاشرے کے لیے لڑتے ہیں۔</p>
+            
+            <div class="quote-section">
+                <p class="quote-text">توہین مذہب کا قانون خدا کا بنایا ہوا قانون نہیں ہے۔ یہ انسانوں کا بنایا ہوا قانون ہے۔ یہ جنرل ضیاء الحق نے بنایا تھا، اور موت کی سزا کا حصہ نواز شریف نے شامل کیا تھا۔ لہٰذا یہ ایک ایسا قانون ہے جو انتہا پسندوں اور رجعت پسندوں کو کمزور لوگوں اور اقلیتوں کو نشانہ بنانے کا بہانہ دیتا ہے۔</p>
+                <p class="quote-author">— سلمان تاثیر</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">زندگی کے سبق</h2>
+            <div class="tribute-card">
+                <div class="tribute-card-header">
+                    <h3>سلمان تاثیر کی کہانی ہمیں کیا سکھاتی ہے؟</h3>
+                </div>
+                <div class="tribute-card-body">
+                    <p>سلمان تاثیر کی زندگی ہمیں سکھاتی ہے کہ حق پر کھڑے ہونے کے لیے کبھی کبھی زندگی کا خطرہ مول لینا پڑتا ہے۔ انہوں نے ایک ایسے وقت میں آواز اٹھائی جب خاموش رہنا آسان تھا۔ وہ جانتے تھے کہ ان کے الفاظ انہیں خطرے میں ڈال سکتے ہیں، لیکن وہ خاموش نہیں ہوئے۔</p>
+                    <p>ہمیں سلمان تاثیر سے یہ بھی سیکھنے کو ملتا ہے کہ سچے لیڈر وہ ہوتے ہیں جو اپنے سیاسی فائدے کو نہیں بلکہ مظلوموں کے حق کو اہمیت دیتے ہیں۔ انہوں نے ایک ایسی خاتون کے لیے آواز اٹھائی جو سیاسی طور پر اہم نہیں تھی، لیکن انسانی طور پر ان کے لیے اہم تھی۔</p>
+                    <p>آج ہم سیکھتے ہیں کہ <span class="highlight-text">آزادی فکر</span> اور <span class="highlight-text">مذہبی رواداری</span> کی جنگ ہمیشہ جاری رہنی چاہیے، چاہے اس کی قیمت کتنی بھی زیادہ کیوں نہ ہو۔</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-quote">ایسی آواز جسے خاموش نہیں کیا جا سکا</p>
+            <p>سلمان تاثیر (۱۹۴۴-۲۰۱۱) کی یاد میں - حق کی آواز، رواداری کا پیغام، آزادی کا سفیر۔</p>
+        </div>
+    </footer>
+</body>
+</html>
